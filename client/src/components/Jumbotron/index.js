@@ -1,13 +1,13 @@
 import React from "react";
 
-function Jumbotron({ children }) {
+// The ...props means, spread all of the passed props onto this element
+// That way we don't have to define them all individually
+function DeleteBtn(props) {
   return (
-    <div
-      style={{ height: 560, clear: "both", paddingTop: 120, textAlign: "center" }}
-    >
-      {children}
-    </div>
+    <span {...props} role="button" tabIndex="0">
+      ✗
+    </span>
   );
 }
 
-export default Jumbotron;
+export default DeleteBtn;
