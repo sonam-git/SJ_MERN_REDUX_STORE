@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {  Link } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -67,8 +68,8 @@ const Cart = () => {
 
   if (!cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
+      <div className="cart-closed cart-icon-div" onClick={toggleCart}>
+        <span role="img" aria-label="trash" className='cart-icon'>
           🛒
         </span>
       </div>
@@ -78,7 +79,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="close" onClick={toggleCart}>
-        [close]
+       <button>Close</button>
       </div>
       <h2>Shopping Cart</h2>
       {cart.length ? (
@@ -92,17 +93,17 @@ const Cart = () => {
 
             {Auth.loggedIn() ? ( loader
               ) : (
-              <span>(log in to check out)</span>
+                 <Link to="/login"><button>Login to Checkout</button></Link>
             )}
           </div>
         </div>
       ) : (
-        <h3>
+        <p>
           <span role="img" aria-label="shocked">
             😱
           </span>
           You haven't added anything to your cart yet!
-        </h3>
+        </p>
       )}
     </div>
   );

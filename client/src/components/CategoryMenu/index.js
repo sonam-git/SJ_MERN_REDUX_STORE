@@ -40,7 +40,7 @@ export default function CategoryMenu() {
   };
 
   return (
-    <div>
+    <div className='category'>
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <button

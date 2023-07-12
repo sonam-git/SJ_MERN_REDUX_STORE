@@ -5,11 +5,21 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ 
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: ''});
   const [addUser] = useMutation(ADD_USER);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    // Check if any input field is empty
+    if (!formState.firstName || !formState.lastName || !formState.email || !formState.password) {
+      setErrorMessage('Please fill up all the information.');
+      return; // Exit the function
+    }
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -35,7 +45,8 @@ function Signup(props) {
       <Link to="/login">← Go to Login</Link>
 
       <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
+      
+      <form onSubmit={handleFormSubmit} className='signup-form'>
         <div className="flex-row space-between my-2">
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -76,6 +87,7 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
+        {errorMessage && <div className="error error-text">{errorMessage}</div>}
         <div className="flex-row flex-end">
           <button type="submit">Submit</button>
         </div>
