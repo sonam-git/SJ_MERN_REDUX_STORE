@@ -55,7 +55,7 @@ THEN I find that the app uses Redux instead of the Context API
 
 ## SJ Redux Store GIF:
 #### The following animation demonstrates the application functionality:
-![Application Gif](./assets/images/.gif)
+![Application Gif](./assets/images/sj-redux-store.gif)
 
 ## Usage Instructions:
 To access application
@@ -76,16 +76,25 @@ To access application
 5. You can view your past orders in the order history section
 
 ## Deployed GitHub-Pages Application Link:
-[Deployed GitHub-Pages Application Link:](https://)
+[Deployed GitHub-Pages Application Link:](https://sj-mern-redux-store-5d414c1de0a0.herokuapp.com/)
 
 ## GitHub Repository:
 [GitHub Repository:](https://github.com/sonam-git/SJ_Redux_Store)
 
 
 ## Application Screenshot:
-* Rendering Product:
+* Rendering Home Screen and Product:
 
-![](./assets/images/)
+![](./assets/images/home.png)
+
+* Rendering User Cart:
+
+![](./assets/images/loggedin.png)
+
+* Rendering Responsive view:
+
+![](./assets/images/responsive1.png)
+
 
 
 ## Installation Process:
