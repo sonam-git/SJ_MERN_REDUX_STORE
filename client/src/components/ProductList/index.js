@@ -10,7 +10,9 @@ import { useSelector, useDispatch } from 'react-redux';
 function ProductList() {
   
   const dispatch = useDispatch();
-  const { currentCategory, products } = useSelector(state=>state);
+  const currentCategory = useSelector(state => state.currentCategory);
+  const products= useSelector(state => state.products);
+
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 

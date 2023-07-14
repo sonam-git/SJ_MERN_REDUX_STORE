@@ -14,7 +14,9 @@ import Spinner from '../../assets/spinner-small.gif'
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
-  const {cart, cartOpen} = useSelector(state=>state);
+  const cart = useSelector(state => state.cart);
+  const cartOpen = useSelector(state => state.cartOpen);
+
   const dispatch = useDispatch();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
   const [isLoading, setIsLoading] = useState(false);
