@@ -1,6 +1,6 @@
 # SJ_MERN_Redux_Store
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
 ## Description.
 
@@ -59,7 +59,7 @@ THEN I find that the app uses Redux instead of the Context API
 
 ## Usage Instructions:
 To access application
-1. Go to [Deployed Application Link:](https://) to access the application
+1. Go to [Deployed Application Link:](https://sj-mern-redux-store-5d414c1de0a0.herokuapp.com/) to access the application
 2. Before logging in/setting up an account
     * Navigate through the products and categories
     * Add products to your cart
