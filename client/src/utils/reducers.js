@@ -1,5 +1,3 @@
-// imports the useReducer hook from the React library
-import { useReducer } from "react";
 // imports a set of action types 
 import {
   UPDATE_PRODUCTS,
@@ -13,9 +11,17 @@ import {
   TOGGLE_CART
 } from "./actions";
 
+// initial states
+const initialState = {
+  products: [],
+  cart: [],
+  cartOpen: false,
+  categories: [],
+  currentCategory: '',
+};
 
 // function to manage/update the state by receiving dispatched actions 
-export const reducer = (state, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
 // Updates the products property of the state with a new array of products received from the action payload.
     case UPDATE_PRODUCTS:
@@ -109,6 +115,4 @@ export const reducer = (state, action) => {
   }
 };
 // exports hooks
-export function useProductReducer(initialState) {
-  return useReducer(reducer, initialState)
-}
+export default reducer;
